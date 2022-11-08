@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 Copyright (C) 2013-2014 Michal Goral
@@ -32,7 +32,7 @@ t = gettext.translation(
     domain='gogo',
     fallback=True)
 gettext.install('gogo')
-_ = t.ugettext
+_ = t.gettext
 
 HELP_MSG = _(
 """gogo - bookmark your favorite directories
@@ -127,15 +127,16 @@ def processRequest(request):
 def printConfig(config):
     echo(_("Current gogo configuration (sorted alphabetically):"))
     if len(config) > 0:
-        justification = len(max(config.keys(), key=len)) + 2
+        justification = len(max(list(config.keys()), key=len)) + 2
 
         # sort
-        configList = [(key, config[key]) for key in config.keys()]
+        configList = [(key, config[key]) for key in list(config.keys())]
         configList.sort(key = operator.itemgetter(0))
 
         for key, val in configList:
-            keyStr = "%s" % key.decode(locale.getpreferredencoding())
-            valStr = " : %s" % val
+            #keyStr = "%s" % key.decode(locale.getpreferredencoding())
+            keyStr = "%s" % key.encode().decode(locale.getpreferredencoding())
+            valStr = " : %s" % str(val)
             echo(keyStr.rjust(justification), endline=False)
             echo(valStr)
     else:
