@@ -17,7 +17,7 @@ directory of parent shell. That's why if you want to use gogo, you have to do a 
    ```
 2. Create ~/.config/gogo/
    ```
-   mkdir -p ~/.config/gogo && cp {gogo.compl,gogo.sh} ~/.config/gogo/
+   mkdir -p ~/.config/gogo && cp {gogo.compl,gogo.sh} ~/.config/gogo/ && chmod 755 {~/.config/gogo/gogo.compl,~/.config/gogo/gogo.sh}
    ```
 3. Add a function from `gogo.sh` e.g. to your `.bash_profile` or `.zshrc`. You can also source it
    there.
