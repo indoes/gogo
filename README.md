@@ -16,18 +16,23 @@ directory of parent shell. That's why if you want to use gogo, you have to do a 
    mkdir -p ~/bin && cp gogo.py ~/bin/
    ```
 
-2. Add a function from `gogo.sh` e.g. to your `.bashrc` or `.zshrc`. You can also source it
+2. Add a function from `gogo.sh` e.g. to your `.bash_profile` or `.zshrc`. You can also source it
    there.
    ```
-   cat gogo.sh >> ~/.bashrc
+   vim ~/.bash_profile
+  
+    # Gogo bookmarks sourcing
+    if [ -f ~/.config/gogo/gogo.sh ]; then
+        . ~/.config/gogo/gogo.sh
+    fi
+    if [ -f ~/.config/gogo/gogo.compl ]; then
+        . ~/.config/gogo/gogo.compl
+    fi
+
    ```
    or:
    ```
    cat gogo.sh >> ~/.zshrc
-   ```
-   source version with `.bashrc`:
-   ```
-   cp gogo.sh ~/.gogo.sh && echo "source ~/.gogo.sh" >> ~/.bashrc
    ```
 
    You can simply use your favorite text editor to perform one of these operations. It's
