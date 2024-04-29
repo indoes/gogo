@@ -23,14 +23,14 @@ directory of parent shell. That's why if you want to use gogo, you have to do a 
    there.
    ```
    vim ~/.bash_profile
-  
-    # Gogo bookmarks sourcing
-    if [ -f ~/.config/gogo/gogo.sh ]; then
-        . ~/.config/gogo/gogo.sh
-    fi
-    if [ -f ~/.config/gogo/gogo.compl ]; then
-        . ~/.config/gogo/gogo.compl
-    fi
+   
+   # Gogo bookmarks sourcing
+   if [ -f ~/.config/gogo/gogo.sh ]; then
+       . ~/.config/gogo/gogo.sh
+   fi
+   if [ -f ~/.config/gogo/gogo.compl ]; then
+       . ~/.config/gogo/gogo.compl
+   fi
 
    ```
    or:
